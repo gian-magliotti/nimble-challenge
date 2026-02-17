@@ -7,7 +7,7 @@ export const useApplyJob = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const submitApplication = async (candidate: Candidate, jobId: string, repoUrl: string) => {
+  const submitApplication = async (candidate: Candidate, jobId: number, repoUrl: string) => {
     setLoading(true);
     setError(null);
     setSuccess(false);
@@ -16,6 +16,7 @@ export const useApplyJob = () => {
       await applyToJob({
         uuid: candidate.uuid,
         candidateId: candidate.candidateId,
+        applicationId: candidate.applicationId,
         jobId,
         repoUrl
       });

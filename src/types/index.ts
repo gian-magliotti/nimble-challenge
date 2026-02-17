@@ -1,20 +1,21 @@
 export interface Candidate {
   uuid: string;
-  candidateId: string;
-  applicationId: string; 
+  candidateId: number;
+  applicationId: number; 
   firstName: string;
   lastName: string;
   email: string;
 }
 
 export interface Job {
-  id: string;
+  id: number;
   title: string;
 }
 
 export interface ApplicationRequest {
   uuid: string;
-  jobId: string;
-  candidateId: string;
+  jobId: number;
+  candidateId: number;
+  applicationId: number;
   repoUrl: string;
 }
